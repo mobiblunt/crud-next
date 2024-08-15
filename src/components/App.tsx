@@ -12,16 +12,19 @@ export default function App() {
   const [rows, setRows] = useState<Row[]>([]);
   const [feedback, setFeedback] = useState('');
 
+
+  // fetch rows on first load
   useEffect(() => {
     fetchRows();
   }, []);
 
+  // fetch rows from supabase
   const fetchRows = async () => {
     const { data, error } = await supabase.from('rows').select('*');
     if (error) console.error('Error fetching rows:', error.message);
     else setRows(data || []);
   };
-
+// handle submit to supabase
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const { data, error } = await supabase.from('rows').insert({ content });
@@ -34,7 +37,7 @@ export default function App() {
       setFeedback('Row created successfully');
     }
   };
-
+// delete row on supabase
   const handleDelete = async (id: number) => {
     const { error } = await supabase.from('rows').delete().eq('id', id);
     if (error) {
@@ -45,7 +48,7 @@ export default function App() {
       setFeedback('Row deleted successfully');
     }
   };
-
+// handle user logout
   const handleLogout = async () => {
     await supabase.auth.signOut();
   };
