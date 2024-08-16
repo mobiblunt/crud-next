@@ -10,7 +10,7 @@ Create a new project in Supabase and get your project URL and anon key. Then cre
 NEXT_PUBLIC_SUPABASE_URL=your-project-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ```
-In your Supabase project, create a new table called rows with the following columns:
+In your Supabase project, create a new table called `rows` with the following columns:
 
 `id`: integer, primary key
 
