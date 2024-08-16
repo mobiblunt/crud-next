@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Set up Supabase:
 
-Create a new project in Supabase and get your project URL and anon key. Then create a .env.local file in the root of your project and add the following:
+Create a new project in Supabase and get your project URL and anon key. Then create a `.env.local` file in the root of your project and add the following:
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=your-project-url
@@ -12,8 +12,9 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ```
 In your Supabase project, create a new table called rows with the following columns:
 
-id: integer, primary key
-content: text
+`id`: integer, primary key
+
+`content`: text
 
 then run the development server:
 
